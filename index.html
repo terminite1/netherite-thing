@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+<title>netherite calculator</title>
+<script>
+    var debris;
+    function calculate() {
+        debris = document.forms["debris_input"]["netherite_ingots"].value;
+        const remainder = debris % 4
+        if(remainder === 0){
+            var noob = (debris / 4)
+            var output = document.getElementById("output")
+            output.innerHTML = noob;
+            output.style.color = "green";
+        } else {
+            var output = document.getElementById("output")
+            output.innerHTML = "Number must be multiple of 4 (4,8,12,16...)"
+            output.style.color = "red";
+        }
+    }
+</script>
+</head>
+<body>
+<h1>netherite calculator</h1>
+
+
+
+
+<form name="debris_input" action="javascript:calculate();">
+    <div>
+        <label for="netherite ingots">ancient debris:</label>
+        <input type="number" id="netherite_ingots" name="netherite_ingots" placeholder="amount" required>
+        <br><br>
+        <input type="submit" value="go">
+    </div>
+</form>
+<br>
+netherite ingots:
+<p id="output"></p>
+</body>
+</html>
